@@ -1,0 +1,23 @@
+
+  label{
+    color: #000000;
+    font-weight: lighter;
+    font-size: 13px;
+  }
+  .form-control{
+    background-color: rgb(228, 223, 223) !important;
+  }
+  .alert-small{
+    padding: 5px;
+    margin: 5px;
+    width: fit-content;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+}
+th{
+  font-size: 13px;
+}
+.card {
+  max-height: 600px;
+}

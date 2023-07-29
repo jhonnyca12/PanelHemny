@@ -1,0 +1,195 @@
+<div class="container-fluid">
+  <div class="row justify-content-center my-3">
+    <div class="col-4 card pb-2">
+      <label class="mt-2"> formulario de Empleados </label>  
+      <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="row mt-2">
+        <div class="col-md-6">
+          <label for="inputName" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputName"
+            placeholder="Tu Nombre"
+            required
+            formControlName="name"
+          />
+          <div
+            *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['required']"
+            class="alert alert-danger alert-small"
+          >
+            El Campo es Requerido.
+          </div>
+          <div
+            *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['minlength']"
+            class="alert alert-danger alert-small"
+          >
+            tener mas de
+            {{contactForm.get('name')?.errors?.['minlength'].requiredLength}}
+            caracteres
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputLastName" class="form-label">Apellido</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputLastName"
+            placeholder="Tu Apellido"
+            formControlName="lastName"
+          />
+          <div
+            *ngIf="contactForm.get('lastName')?.touched && contactForm.get('lastName')?.errors?.['required']"
+            class="alert alert-danger alert-small"
+          >
+            El Campo es Requerido
+          </div>
+          <div
+            *ngIf="contactForm.get('lastName')?.touched && contactForm.get('lastName')?.errors?.['minlength']"
+            class="alert alert-danger alert-small"
+          >
+            tener mas de
+            {{contactForm.get('lastName')?.errors?.['minlength'].requiredLength}}
+            caracteres
+          </div>
+        </div>
+        <div class="col-12 mt-2">
+          <label for="inputDireccion" class="form-label">Direccion</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputDireccion"
+            placeholder="Direccion"
+            formControlName="direccion"
+          />
+          <div
+            *ngIf="contactForm.get('direccion')?.touched && contactForm.get('direccion')?.errors?.['required']"
+            class="alert alert-danger alert-small"
+          >
+            El Campo es Requerido
+          </div>
+        </div>
+        <div class="col-12 mt-2">
+          <label for="inputDireccions" class="form-label">Direccion</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputDirectionTwo"
+            placeholder="Direccion 2 "
+            formControlName="directionTwo"
+          />
+        </div>
+        <div class="col-md-3 mt-2">
+          <label for="inputPais" class="form-label">Pais</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCountry"
+            placeholder="Country "
+            formControlName="country"
+          />
+          <div
+            *ngIf="contactForm.get('pais')?.touched && contactForm.get('pais')?.errors?.['required']"
+            class="alert alert-danger alert-small"
+          >
+            Requerido
+          </div>
+        </div>
+        <div class="col-md-3 mt-2">
+          <label for="inputCity" class="form-label">Ciudad</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCiudad"
+            placeholder="City "
+            formControlName="city"
+          />
+          <div
+            *ngIf="contactForm.get('ciudad')?.touched && contactForm.get('ciudad')?.errors?.['required']"
+            class="alert alert-danger alert-small"
+          >
+            Requerido
+          </div>
+        </div>
+        <div class="col-md-3 mt-2">
+          <label for="inputPostal" class="form-label"> Postal</label>
+          <input
+            type="number"
+            class="form-control"
+            id="inputPostal"
+            placeholder="Postal "
+            formControlName="postal"
+          />
+          <div
+            *ngIf="contactForm.get('postal')?.touched && contactForm.get('postal')?.errors?.['required']"
+            class="alert alert-danger alert-small"
+          >
+            Requerido
+          </div>
+        </div>
+        <div class="col-md-3 mt-2">
+          <label for="inputSize" class="form-label">Estatura</label>
+          <input
+            type="number"
+            class="form-control"
+            id="inputSize"
+            placeholder="Size "
+            formControlName="size"
+          />
+          <div
+            *ngIf="contactForm.get('estatura')?.touched && contactForm.get('estatura')?.errors?.['required']"
+            class="alert alert-danger alert-small"
+          >
+            Requerido
+          </div>
+        </div>
+        <div class="row flex-column">
+          <div class="col-md-3 mt-2">
+            <label for="inputWeight" class="form-label">Peso</label>
+            <input
+              min="0"
+              type="number"
+              class="form-control"
+              id="inputWeight"
+              placeholder="Weight"
+              formControlName="weight"
+            />
+          </div>
+          <div
+            *ngIf="contactForm.get('peso')?.touched && contactForm.get('peso')?.errors?.['required']"
+            class="alert alert-danger alert-small col-3"
+          >
+            El campo es requerido
+          </div>
+        </div>
+
+        <div class="col-12 mt-2">
+          <div class="form-check p-0 d-flex align-items-center">
+            <input
+              type="checkbox"
+              id="checkTerms"
+              class="form-cl"
+              formControlName="checkTerms"
+            />
+            <label for="checkTerms" class="form-check-label ms-1">
+              Acepto los terminos y condiciones
+            </label>
+          </div>
+        </div>
+        <div class="col-12 mt-2">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="contactForm.invalid"
+          >
+            Enviar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row my-2 justify-content-center">
+    <div class="col-12">
+      <app-table-dashboard [arrayHijo]="arrayItems"></app-table-dashboard>
+    </div>
+  </div>
+</div>

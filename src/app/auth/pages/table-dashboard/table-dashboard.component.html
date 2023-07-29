@@ -1,0 +1,60 @@
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input [(ngModel)]="searchText" name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+       <button (click)="filterUsers()" class="btn btn-outline-success" type="button">
+        <i class="fas fa-search"></i>
+       </button>
+    </form>
+  </div>
+</nav>
+
+<table class="table">
+  <thead>
+    
+    <tr >
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Direccion 2</th>
+      <th scope="col">Pais</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Postal</th>
+      <th scope="col">Estatura</th>
+      <th scope="col">Peso</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of arrayHijo; let i = index" 
+    >
+      <td>{{ i + 1 }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.direccion }}</td>
+      <td>{{ user.directionTwo }}</td>
+      <td>{{ user.country }}</td>
+      <td>{{ user.city }}</td>
+      <td>{{ user.postal }}</td>
+      <td>{{ user.size }}</td>
+      <td>{{ user.weight }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-outline-danger p-1"
+          (click)="borrarItem(i)"
+        >
+          <i class="fa-solid fa-trash p-1" style="color: #ff7c7c"></i>
+        </button>
+
+        <button
+          class="btn btn-outline-primary m-1"
+          (click)="openModelEdit(user, i)"
+        >
+          <i class="fa-solid fa-edit" style="color: #007bff"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

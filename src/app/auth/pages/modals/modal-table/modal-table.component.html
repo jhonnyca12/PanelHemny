@@ -1,0 +1,120 @@
+<div class="modal-header">
+  <h4 class="modal-title">Editar</h4>
+  <button
+    (click)="closeModal()"
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+  ></button>
+</div>
+<div class="modal-body table">
+  <form class="row mt-4">
+    <div class="col-md-6">
+      <label for="first" class="form-label">Nombre</label>
+      <input
+        [(ngModel)]="userEdit.name"
+        type="text"
+        class="form-control"
+        id="inputName"
+        placeholder="Tu Nombre"
+        name="first"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="firstLastName" class="form-label">Apellido</label>
+      <input
+        [(ngModel)]="userEdit.lastName"
+        type="text"
+        class="form-control"
+        id="inputLastName"
+        placeholder="Tu Apellido"
+        name="firstLastName"
+      />
+    </div>
+    <div class="col-12 mt-2">
+      <label for="inputDireccion" class="form-label">Direccion</label>
+      <input
+        [(ngModel)]="userEdit.direccion"
+        type="text"
+        class="form-control"
+        id="inputDireccion"
+        placeholder="Direccion"
+        name="inputDireccion"
+      />
+    </div>
+    <div class="col-12 mt-2">
+      <label for="inputDireccions" class="form-label">Direccion</label>
+      <input
+        [(ngModel)]="userEdit.directionTwo"
+        type="text"
+        class="form-control"
+        id="inputDireccions"
+        placeholder="Direccion 2 "
+        name="inputDireccions"
+      />
+    </div>
+    <div class="col-md-3 mt-2">
+      <label for="inputCountry" class="form-label">Pais</label>
+      <input
+        [(ngModel)]="userEdit.country"
+        type="text"
+        class="form-control"
+        id="inputCountry"
+        placeholder="Pais "
+        name="inputCountry"
+      />
+    </div>
+    <div class="col-md-3 mt-2">
+      <label for="inputCity" class="form-label">Ciudad</label>
+      <input
+        [(ngModel)]="userEdit.city"
+        type="text"
+        class="form-control"
+        id="inputCity"
+        placeholder="Ciudad "
+        name="inputCity"
+      />
+    </div>
+    <div class="col-md-3 mt-2">
+      <label for="inputPostal" class="form-label">Codigo Postal</label>
+      <input
+        [(ngModel)]="userEdit.postal"
+        type="number"
+        class="form-control"
+        id="inputPostal"
+        placeholder="Postal "
+        name="inputPostal"
+      />
+    </div>
+    <div class="col-md-3 mt-2">
+      <label for="inputSize" class="form-label">Estatura</label>
+      <input
+        [(ngModel)]="userEdit.size"
+        type="number"
+        class="form-control"
+        id="inputSize"
+        placeholder="Estatura "
+        name="size"
+      />
+    </div>
+    <div class="row flex-column">
+      <div class="col-md-3 mt-2">
+        <label for="inputWeight" class="form-label">Peso</label>
+        <input
+          [(ngModel)]="userEdit.weight"
+          min="0"
+          type="number"
+          class="form-control"
+          id="inputWeight"
+          placeholder="Peso"
+          name="inputWeight"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button (click)="guardarInformacion()" type="button" class="btn btn-light">
+    Save
+  </button>
+</div>

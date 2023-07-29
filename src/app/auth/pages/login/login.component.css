@@ -1,0 +1,21 @@
+input[type="password"] {
+    padding-right: 45px; /* Ajustar el padding para dejar espacio para el botón o icono */
+    
+}
+
+.input-group-append {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+.input-group-append button {
+    height: 100%;
+}
+
+.btn-outline-secondary {
+    border: none;
+}
+
+ 
